@@ -15,8 +15,12 @@ function Cards() {
     fetchData();
   }, []);
 
-  const outOfFrame = () => {};
-  const swiped = () => {};
+  const outOfFrame = (name) => {
+    console.log(`${name} is gone.`);
+  };
+  const swiped = (directions, nameToDelete) => {
+    console.log(`${nameToDelete} is going ${directions}`);
+  };
 
   return (
     <div className="cards">
@@ -26,14 +30,14 @@ function Cards() {
             className="swipe"
             key={i}
             onSwipe={(dir) => swiped(dir, person.name)}
-            preventSwipe={("up", "down")}
+            preventSwipe={["up", "down"]}
             onCardLeftScreen={() => outOfFrame(person.name)}
           >
             <div
               style={{ backgroundImage: `url(${person.imgUrl})` }}
               className="mainCard"
             >
-              {person.name}
+              <h3>{person.name}</h3>
             </div>
           </TinderCard>
         ))}

@@ -1,7 +1,13 @@
 import React from "react";
 import "./SwipeButton.css";
 import { IconButton } from "@material-ui/core";
-import { Replay, Close } from "@material-ui/icons/";
+import {
+  Replay,
+  Close,
+  StarRate,
+  Favorite,
+  FlashOn,
+} from "@material-ui/icons/";
 function SwipeButtons() {
   return (
     <div className="swipeButtons">
@@ -12,7 +18,13 @@ function SwipeButtons() {
         <Replay />
       </IconButton>
       <IconButton>
-        <Replay />
+        <StarRate />
+      </IconButton>
+      <IconButton>
+        <Favorite />
+      </IconButton>
+      <IconButton>
+        <FlashOn />
       </IconButton>
     </div>
   );
